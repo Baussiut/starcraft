@@ -1,0 +1,16 @@
+{% extends 'base.twig' %}
+
+{% block main %}
+    <section>
+        <h2>The world of Starcraft</h2>
+
+        {% for perso in Starcraft %}
+            <a href="/Starcraft/{{ perso.slug }}">
+                <figure>
+                    <img src="{{ perso.avatar }}" alt="{{ perso.name }}" />
+                    <figcaption>Discover the {{ perso.name }}</figcaption>
+                </figure>
+            </a>
+        {% endfor %}
+    </section>
+{% endblock %}

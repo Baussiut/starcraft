@@ -1,0 +1,220 @@
+{% extends 'base.twig' %}
+
+
+{% block main %}
+
+<div class="grid">
+    <article>
+        <h2>Discover the {{ zerg.name }}</h2>
+
+        <div class="description">
+            {{ zerg.description|markdown|raw }}
+        </div>
+
+        <div class="zerg">
+            <img src="{{ zerg.avatar }}" alt="{{ zerg.name }}" />
+            <dl>
+                <dt>Name</dt>
+                <dd>{{ zerg.name }}</dd>
+                <dt>slug</dt>
+                <dd>{{zerg.slug}}</dd>
+                <dt>uri</dt>
+                <dd>{{zerg.uri}}</dd>
+            </dl>
+        </div>
+
+        <div class="abilities_zerg">
+            <dl> 
+                <dt>Cost</dt>
+                <dd>{{zerg.Cost}}</dd>
+                <dt>Cost_type<dt>
+                <dd>{{zerg.Cost_type}}</dd>
+                <dt>description</dt>
+                <dd>{{zerg.description}}</dd>
+                <dt>duration</dt>
+                <dd>{{zerg.duration}}</dd>
+                <dt>icon</dt>
+                <dd>{{zerg.icon}}</dd>
+                <dt>name</dt>
+                <dd>{{zerg.name}}</dd>
+                <dt>slug</dt>
+                <dd>{{zerg.slug}}</dd>
+                <dt>armor</dt>
+                <dd>{{zerg.armor}}</dd>
+                <dt>avatar</dt>
+                <dd>{{zerg.avatar}}</dd>
+                <dt>build_time</dt>
+                <dd>{{zerg.build_time}}</dd>
+                <dt>damage</dt>
+                <dd>{{zerg.damage}}</dd>
+                <dt>hitpoints</dt>
+                <dd>{{zerg.hitpoints}}</dd>
+                <dt>hotkey</dt>
+                <dd>{{zerg.hotkey}}</dd>
+                <dt>max_energy</dt>
+                <dd>{{zerg.max_energy}}</dd>
+                <dt>minerals</dt>
+                <dd>{{zerg.minerals}}</dd>
+                <dt>name</dt>
+                <dd>{{zerg.name}}</dd>
+                <dt>picture</dt>
+                <dd>{{zerg.picture}}</dd>
+                <dt>range</dt>
+                <dd>{{zerg.range}}</dd>
+                <dt>sight</dt>
+                <dd>{{zerg.sight}}</dd>
+                <dt>slug</dt>
+                <dd>{{zerg.slug}}</dd>
+                <dt>speed</dt>
+                <dd>{{zerg.speed}}</dd>
+                <dt>starting_energy</dt>
+                <dd>{{zerg.starting_energy}}</dd>
+                <dt>supply</dt>
+                <dd>{{zerg.supply}}</dd>
+                <dt>type</dt>
+                <dd>{{zerg.type}}</dd>             
+            </dl>
+        </div>
+
+        <div class="upgrades_zerg">
+              <dl>
+                <dt>build_time</dt>
+                <dd>{{ zerg.build_time }}</dd>
+                <dt>description</dt>
+                <dd>{{zerg.description}}</dd>
+                <dt>icon</dt>
+                <dd>{{zerg.icon}}</dd>
+                <dt>minerals</dt>
+                <dd>{{zerg.minerals}}</dd>
+                <dt>name</dt>
+                <dd>{{zerg.name}}</dd>
+                <dt>slug</dt>
+                <dd>{{zerg.slug}}</dd>
+                <dt>vespene_gas</dt>
+                <dd>{{zerg.vespene_gas}}</dd>
+            </dl>
+        </div>
+    </article>
+
+    <aside>
+        <h3>Top rated Zerg </h3>
+        {% for terran in top_rated_zerg %}
+            <a href="/starcraft/{{ terran.slug }}">
+                <figure>
+                    <img src="{{ terran.avatar }}" alt="{{ terran.name }}" />
+                    <figcaption>Discover the {{ terran.name }}</figcaption>
+                </figure>
+            </a>
+        {% endfor %}
+    </aside>
+</div>
+
+
+<div class="grid">
+    <article>
+        <h2>Discover the {{ terran.name }}</h2>
+
+        <div class="description">
+            {{ terran.description|markdown|raw }}
+        </div>
+
+        <div class="terran">
+            <img src="{{ terran.avatar }}" alt="{{ terran.name }}" />
+            <dl>
+                <dt>Name</dt>
+                <dd>{{ terran.name }}</dd>
+                <dt>slug</dt>
+                <dd>{{terran.slug}}</dd>
+                <dt>uri</dt>
+                <dd>{{terran.uri}}</dd>
+            </dl>
+        </div>
+
+        <div class="abilities_terran">
+            <dl> 
+                <dt>Cost</dt>
+                <dd>{{terran.Cost}}</dd>
+                <dt>Cost_type<dt>
+                <dd>{{terran.Cost_type}}</dd>
+                <dt>description</dt>
+                <dd>{{terran.description}}</dd>
+                <dt>duration</dt>
+                <dd>{{terran.duration}}</dd>
+                <dt>icon</dt>
+                <dd>{{terran.icon}}</dd>
+                <dt>name</dt>
+                <dd>{{terran.name}}</dd>
+                <dt>slug</dt>
+                <dd>{{terran.slug}}</dd>
+                <dt>armor</dt>
+                <dd>{{terran.armor}}</dd>
+                <dt>avatar</dt>
+                <dd>{{terran.avatar}}</dd>
+                <dt>build_time</dt>
+                <dd>{{terran.build_time}}</dd>
+                <dt>damage</dt>
+                <dd>{{terran.damage}}</dd>
+                <dt>hitpoints</dt>
+                <dd>{{terran.hitpoints}}</dd>
+                <dt>hotkey</dt>
+                <dd>{{terran.hotkey}}</dd>
+                <dt>max_energy</dt>
+                <dd>{{terran.max_energy}}</dd>
+                <dt>minerals</dt>
+                <dd>{{terran.minerals}}</dd>
+                <dt>name</dt>
+                <dd>{{terran.name}}</dd>
+                <dt>picture</dt>
+                <dd>{{terran.picture}}</dd>
+                <dt>range</dt>
+                <dd>{{terran.range}}</dd>
+                <dt>sight</dt>
+                <dd>{{terran.sight}}</dd>
+                <dt>slug</dt>
+                <dd>{{terran.slug}}</dd>
+                <dt>speed</dt>
+                <dd>{{terran.speed}}</dd>
+                <dt>starting_energy</dt>
+                <dd>{{terran.starting_energy}}</dd>
+                <dt>supply</dt>
+                <dd>{{terran.supply}}</dd>
+                <dt>type</dt>
+                <dd>{{terran.type}}</dd>             
+            </dl>
+        </div>
+
+        <div class="upgrades_terran">
+              <dl>
+                <dt>build_time</dt>
+                <dd>{{ terran.build_time }}</dd>
+                <dt>description</dt>
+                <dd>{{terran.description}}</dd>
+                <dt>icon</dt>
+                <dd>{{terran.icon}}</dd>
+                <dt>minerals</dt>
+                <dd>{{terran.minerals}}</dd>
+                <dt>name</dt>
+                <dd>{{terran.name}}</dd>
+                <dt>slug</dt>
+                <dd>{{terran.slug}}</dd>
+                <dt>vespene_gas</dt>
+                <dd>{{terran.vespene_gas}}</dd>
+            </dl>
+        </div>
+    </article>
+
+    <aside>
+        <h3>Top rated Terran </h3>
+        {% for terran in top_rated_terran %}
+            <a href="/starcraft/{{ terran.slug }}">
+                <figure>
+                    <img src="{{ terran.avatar }}" alt="{{ terran.name }}" />
+                    <figcaption>Discover the {{ terran.name }}</figcaption>
+                </figure>
+            </a>
+        {% endfor %}
+    </aside>
+</div>
+{% endblock %}
+
+²
