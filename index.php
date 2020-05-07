@@ -44,7 +44,7 @@ Flight::route('/', function(){
 Flight::route('/zerg/@slug', function($slug){
     $data = array(
         'perso' => get_zergunits_by_slug($slug),
-        'top_zerg_dinosaurs' => get_top_rated_zerg(),
+        'top_rated_zerg' => get_top_rated_zerg(),
     );
 
     Flight::render('starcraft.twig', $data);
@@ -52,7 +52,7 @@ Flight::route('/zerg/@slug', function($slug){
 Flight::route('/terran/@slug', function($slug){
     $data = array(
         'perso' => get_terranunits_by_slug($slug),
-        'top_terran_dinosaurs' => get_top_rated_terran(),
+        'top_rated_terran' => get_top_rated_terran(),
     );
 
     Flight::render('starcraft.twig', $data);
